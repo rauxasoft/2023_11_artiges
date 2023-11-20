@@ -33,6 +33,8 @@ public class ArtistaServicesImpl implements ArtistaServices {
 		Date fecha2Nacimiento = null;
 		Date fecha2Defuncion = null;
 		
+		Date fecha3Nacimiento = null;
+		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
 		try {
@@ -40,6 +42,7 @@ public class ArtistaServicesImpl implements ArtistaServices {
 			fecha1Defuncion = sdf.parse("03/07/2015");
 			fecha2Nacimiento = sdf.parse("09/01/1921");
 			fecha2Defuncion = sdf.parse("25/12/1993");
+			fecha3Nacimiento = sdf.parse("09/04/1985");
 			
 		} catch(Exception e) {
 			
@@ -67,8 +70,20 @@ public class ArtistaServicesImpl implements ArtistaServices {
 		artista2.setObservaciones("Muy bueno...");
 		artista2.setEstilos(Arrays.asList(estilo1, estilo2));
 		
+		Artista artista3 = new Artista();
+		artista3.setCodigo(1002L);
+		artista3.setNombre("David Bisbal");
+		artista3.setFechaNacimiento(fecha3Nacimiento);
+		artista3.setFechaDefuncion(null);
+		artista3.setPuntos(12);
+		artista3.setActivo(true);
+		artista3.setNacionalidad("España");
+		artista3.setObservaciones("Muy...");
+		artista3.setEstilos(Arrays.asList(estilo1));
+		
 		MAPA_ARTISTAS.put(artista1.getCodigo(), artista1);
 		MAPA_ARTISTAS.put(artista2.getCodigo(), artista2);
+		MAPA_ARTISTAS.put(artista3.getCodigo(), artista3);
 		
 	}
 	
