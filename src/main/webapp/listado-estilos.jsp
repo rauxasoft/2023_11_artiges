@@ -18,10 +18,10 @@
 				</tr>
 			</thead>
 			<tbody>
-			<c:forEach items="${estilos}" var="juju">
+			<c:forEach items="${estilos}" var="estilo">
 				<tr>
-					<td>${juju.codigo}</td>
-					<td>${juju.nombre}</td>
+					<td>${estilo.codigo}</td>
+					<td>${estilo.nombre}</td>
 				</tr>
 			</c:forEach>
 			</tbody>

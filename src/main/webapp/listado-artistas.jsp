@@ -15,8 +15,8 @@
 				<tr>
 					<th>Código</th>
 					<th>Nombre</th>
-					<th>Fecha de Nacimiento</th>
-					<th>Fecha de Defunción</th>
+					<th style="text-align: center;">Fecha de Nacimiento</th>
+					<th style="text-align: center;">Fecha de Defunción</th>
 					<th>Nacionalidad</th>
 				</tr>
 			</thead>
@@ -25,14 +25,15 @@
 				<tr>
 					<td>${artista.codigo}</td>
 					<td>${artista.nombre}</td>
-					<td><fmt:formatDate value="${artista.fechaNacimiento}" pattern="dd/MM/yyyy"/></td>
-					<td>
-					<c:if test="${artista.fechaDefuncion != null}">
-						<fmt:formatDate value="${artista.fechaDefuncion}" pattern="dd/MM/yyyy"/>
-					</c:if>
-					<c:if test="${artista.fechaDefuncion == null}">
-						<span>---</span>
-					</c:if>
+					<td style="text-align: center;">
+						<fmt:formatDate value="${artista.fechaNacimiento}" pattern="dd/MM/yyyy"/></td>
+					<td style="text-align: center;">
+						<c:if test="${artista.fechaDefuncion != null}">
+							<fmt:formatDate value="${artista.fechaDefuncion}" pattern="dd/MM/yyyy"/>
+						</c:if>
+						<c:if test="${artista.fechaDefuncion == null}">
+							<span>---</span>
+						</c:if>
 					</td>
 					<td>${artista.nacionalidad}</td>
 				</tr>
