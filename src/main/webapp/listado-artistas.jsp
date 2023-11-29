@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<jsp:include page="common-in-head.jsp"/>
+	<jsp:include page="common-in-head.html"/>
 </head>
 <body>
 	<div class="container">
@@ -21,9 +21,9 @@
 				</tr>
 			</thead>
 			<tbody>
-			<c:forEach items="${artistas}" var="artista">
+			<c:forEach var="artista" items="${artistas}">
 				<tr>
-					<td>${artista.codigo}</td>
+					<td><a href="artistas?codigo=${artista.codigo}">${artista.codigo}</a></td>
 					<td>${artista.nombre}</td>
 					<td style="text-align: center;">
 						<fmt:formatDate value="${artista.fechaNacimiento}" pattern="dd/MM/yyyy"/></td>

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<jsp:include page="common-in-head.jsp"/>
+	<jsp:include page="common-in-head.html"/>
 </head>
 <body>
 	<div class="container">

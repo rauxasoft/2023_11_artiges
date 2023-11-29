@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page import="com.rauxasoft.artiges.business.model.Estilo" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +10,9 @@
 	<div class="container">
 		<jsp:include page="header.jsp"/>
 		<h2>Listado de Estilos</h2>
+		<%
+			out.println("<h3>Soy el subheader colocado desde Java</h3>");
+		%>
 		<table class="table">
 			<thead>
 				<tr>
@@ -18,12 +21,13 @@
 				</tr>
 			</thead>
 			<tbody>
-			<c:forEach items="${estilos}" var="estilo">
-				<tr>
-					<td>${estilo.codigo}</td>
-					<td>${estilo.nombre}</td>
-				</tr>
-			</c:forEach>
+			<%			
+				List<Estilo> estilos = (List<Estilo>) request.getAttribute("estilos");
+				
+				for(Estilo estilo: estilos){
+					out.println("<tr><td>" + estilo.getCodigo() + "</td><td>" + estilo.getNombre() + "</td></tr>");
+				}
+			%>
 			</tbody>
 		</table>
 	</div>
